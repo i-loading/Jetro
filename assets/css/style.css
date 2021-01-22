@@ -231,7 +231,7 @@ header nav .menu {
   align-items: center;
 }
 
-header nav .menu li {
+header nav .menu li + li {
   margin-left: 27px;
 }
 
@@ -403,7 +403,7 @@ footer::before {
   display: block;
   bottom: 0;
   left: 0;
-  height: 243px;
+  height: 220px;
   width: 220px;
   background: #f3b29d;
 }
@@ -414,7 +414,7 @@ footer::after {
   display: block;
   bottom: 0;
   right: 0;
-  height: 243px;
+  height: 220px;
   width: 220px;
   background: #f3b29d;
   z-index: -1;
@@ -455,15 +455,16 @@ footer .footer-inner .about-footer {
 }
 
 footer .footer-inner .twitter-footer {
-  margin: 0 60px;
+  margin: 0 30px;
 }
 
 footer .socials {
   margin-top: 20px;
+  margin-left: 0 !important;
 }
 
 footer .socials a {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .about-title {
@@ -941,18 +942,14 @@ footer .socials a {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .slider-section .slider .main-slide_wrapper .main-slide {
-    width: 90%;
-  }
-
-  .slider-section .slider .main-slide_wrapper .main-slide_desc {
-    left: 50%;
-    margin-right: -50%;
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
+    width: 100%;
   }
 
   .slider-section .slider .small-slides {
@@ -974,11 +971,11 @@ footer .socials a {
   }
 
   .more-section .more-wrapper .more-item {
-    margin: 50px 100px;
+    margin: 50px;
   }
 
   .more-section .more-wrapper .more-item:nth-child(2) {
-    margin: 50px 100px;
+    margin: 50px;
   }
 
   .recent-section .recent-headline {
@@ -998,6 +995,10 @@ footer .socials a {
     justify-content: space-around;
   }
 
+  .recent-item {
+    margin: 10px;
+  }
+
   .portfolio-section .portfolio-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1015,11 +1016,18 @@ footer .socials a {
 
 @media screen and (max-width: 840px) {
   .slider-section .slider .main-slide_wrapper .main-slide_desc {
-    bottom: -22px;
+    bottom: 1px;
   }
 
   .slider-section .slider .small-slides {
     display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .slider-section .slider .main-slide_wrapper .main-slide_desc {
+    position: unset;
+    max-width: 100%;
   }
 }
 
@@ -1058,7 +1066,8 @@ footer .socials a {
   }
 
   .about .sidebar {
-    margin: 0 100px;
+    max-width: 70%;
+    margin: 0 auto;
   }
 }
 
@@ -1102,8 +1111,8 @@ footer .socials a {
 
   footer .footer-inner div {
     margin-bottom: 30px !important;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 }
 
@@ -1131,6 +1140,14 @@ footer .socials a {
 }
 
 @media screen and (max-width: 420px) {
+  header::before {
+    display: none;
+  }
+
+  header::after {
+    display: none;
+  }
+
   header nav {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
